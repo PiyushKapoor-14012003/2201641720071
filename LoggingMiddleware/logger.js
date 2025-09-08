@@ -71,21 +71,10 @@ function getFetch() {
     const nf = require('node-fetch');
     return nf.default || nf;
   } catch (e) {
-    throw new Error('Global fetch not available and node-fetch is not installed. Install node-fetch or use Node 18+.');
+    throw new Error('Global fetch not available and node-fetch is not installed');
   }
 }
 
-/**
- * Log function
- * @param {string} stack
- * @param {string} level
- * @param {string} pkg
- * @param {string} message
- * @param {Object} [opts]
- * @param {string} [opts.apiUrl]
- * @param {number} [opts.maxRetries]
- * @param {number} [opts.timeoutMs]
- */
 async function Log(stack, level, pkg, message, opts = {}) {
   validateInputs(stack, level, pkg, message);
 
@@ -95,7 +84,7 @@ async function Log(stack, level, pkg, message, opts = {}) {
 
   const token = resolveAuthTokenFromEnv();
   if (!token) {
-    throw new Error('Auth token not found in environment. Set TOKEN, LOGGER_AUTH_TOKEN, or AUTH_TOKEN in your .env or environment.');
+    throw new Error('Auth token not found in environment. Set TOKEN.');
   }
 
   const body = { stack, level, package: pkg, message };
