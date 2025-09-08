@@ -1,5 +1,9 @@
 const DEFAULT_API = 'http://20.244.56.144/evaluation-service/logs';
 
+try {
+  require('dotenv').config();
+} catch (e) {
+}
 const ALLOWED_STACKS = ['backend', 'frontend'];
 const ALLOWED_LEVELS = ['debug', 'info', 'warn', 'error', 'fatal'];
 const ALLOWED_PACKAGES = [
@@ -24,11 +28,6 @@ function validateInputs(stack, level, pkg, message) {
   if (typeof message !== 'string') {
     throw new TypeError('Message must be a string');
   }
-}
-
-try {
-  require('dotenv').config();
-} catch (e) {
 }
 
 function resolveAuthTokenFromEnv() {
