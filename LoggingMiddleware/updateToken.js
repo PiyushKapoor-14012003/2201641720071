@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const AUTH_URL = "http://20.244.56.144/evaluation-service/auth";
-const clientID = "a52c9dd1-7708-4d58-a77a-6768d53f9040";
-const clientSecret = "xDDFezptgbJMgHSu"; 
+const clientID = "27b8afd1-c15f-415b-8dc3-0e124749a9b1";
+const clientSecret = "fBZyzupZGECHWURD"; 
 const accessCode = "sAWTuR";
 
 let accessToken = null;
@@ -18,7 +18,7 @@ async function getToken() {
   try {
     const res = await axios.post(AUTH_URL, {
         "email": "kapoorpiyush1401@gmail.com",
-        "name": "Piyush kapoor",
+        "name": "Piyush Kapoor",
         "rollNo": "2201641720071",
         "accessCode": accessCode,
         "clientID": clientID,
