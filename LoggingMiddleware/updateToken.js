@@ -18,7 +18,7 @@ async function getToken() {
   try {
     const res = await axios.post(AUTH_URL, {
         "email": "kapoorpiyush1401@gmail.com",
-        "name": "piyush kapoor",
+        "name": "Piyush kapoor",
         "rollNo": "2201641720071",
         "accessCode": accessCode,
         "clientID": clientID,
